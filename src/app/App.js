@@ -68,7 +68,12 @@ class App extends Component{
        }else{
             fetch('/api/construccion',{
                 method:'POST',
-                body: JSON.stringify(this.state),
+                body: JSON.stringify({
+                    typeApartment: this.state.typeApartment,
+                    apartmentNumber: this.state.apartmentNumber,
+                    areaMt: this.state.areaMt,
+                    priceMt: this.state.priceMt
+                }),
                 headers:{
                 'Accept':'application/json' ,
                 'Content-Type': 'application/json'
